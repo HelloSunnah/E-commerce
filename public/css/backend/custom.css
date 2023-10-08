@@ -1,0 +1,9 @@
+.sidebar-dark-white .nav-sidebar > .nav-item > .nav-link.active, .sidebar-light-white .nav-sidebar > .nav-item > .nav-link.active {
+    background-color: #6c757d;
+    color: #ffffff;
+}
+
+.required-star:after {
+    color: red;
+    content: " *";
+}
