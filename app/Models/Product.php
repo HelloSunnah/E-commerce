@@ -10,8 +10,8 @@ class Product extends Model
     use HasFactory;
     protected $guarded=[];
 
-public function variations()
-{
-    return $this->hasMany(Variation::class);
-}
+    public function variations()
+    {
+        return $this->hasMany(Variation::class);
+    }
 }
