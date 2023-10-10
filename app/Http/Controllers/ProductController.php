@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Variation;
-use Illuminate\Http\Request;
 use Laravel\Prompts\Prompt;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class ProductController extends Controller
 {
@@ -112,5 +113,23 @@ class ProductController extends Controller
         }
 
         return redirect()->route('product.list')->with('success', 'Product updated successfully');
+    }
+    public function SearchProduct(Request $request)
+    {
+
+        $search = $request->input('search');
+        $resp = Http::withoutVerifying()
+            ->withBasicAuth(env("API_USERNAME"), env("API_PASSWORD"))
+            ->get("https://vertexbazaar.com/wp-json/wc/v2/products?search={$request->search}");
+
+        $results = collect($resp)->filter(function ($item) use ($search) {
+            return str_contains(strtolower($item['name']), strtolower($search));
+        });
+
+        return $resp->object();
+    }
+    public function search()
+    {
+        return view('backend.product.productView');
     }
 }

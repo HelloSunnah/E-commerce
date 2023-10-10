@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('master');
 });
 
 Auth::routes();
@@ -24,5 +26,7 @@ Route::get('/product/list', [App\Http\Controllers\ProductController::class, 'pro
 Route::get('/product/create', [App\Http\Controllers\ProductController::class, 'productCreate'])->name('product.create');
 Route::post('/product/create/save', [App\Http\Controllers\ProductController::class, 'productCreateSave'])->name('product.create.post');
 Route::get('/product/delete/{id}', [App\Http\Controllers\ProductController::class, 'productDelete'])->name('product.delete');
-Route::get('/product/edit/{id}', [App\Http\Controllers\ProductController::class, 'productEdit'])->name('product.edit');
+Route::get('/product/edit/{id}', [ProductController::class, 'productEdit'])->name('product.edit');
 Route::post('/product/edit/save/{id}', [App\Http\Controllers\ProductController::class, 'productEditSave'])->name('product.edit.post');
+Route::get('product/search', [ProductController::class, 'SearchProduct'])->name('product.search');
+Route::get('/search', [ProductController::class, 'search']);

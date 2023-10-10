@@ -34,4 +34,20 @@ class API_Controller extends Controller
             return $this->sendError($e->getMessage(), [], 500);
         }
     }
+
+
+
+
+
+  /**
+     * --------------------------------------------------------
+     *  handle the omming api through another admin
+     * --------------------------------------------------------
+     * 
+     * @contributor Shahria Sunnah   <sunnahshahria@gmail.com>
+     * @last_modified october 08, 2023
+     */
+        
+     
+
 }
