@@ -6,7 +6,7 @@
         <span class="fw-bold px-3 py-2 border rounded">
             <i class="fa-brands fa-algolia"></i>
         </span>
-        <span class="pl-2 brand-text font-weight-bold">E-commerce</span>
+        <span class="pl-2 brand-text font-weight-bold">Business Name</span>
     </a>
 
     <!-- Sidebar -->
@@ -17,17 +17,21 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
-                <a href="#" class="nav-link mb-2">
-                    <i class="fab fa-edge-legacy nav-icon"></i>
-                    <p>
-                        Dashboard
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
+                
+                <li class="nav-item">
+                    <a href="{{route("home")}}" class="nav-link mb-2">
+                        <i class="fa fa-gauge nav-icon"></i>
+                        <p>
+                            Dashboard
+                            {{-- <i class="right fas fa-angle-left"></i> --}}
+                        </p>
+                    </a>
+                </li>
 
                 <li class="nav-item">
+
                     <a href="#" class="nav-link mb-2">
-                        <i class="fab fa-edge-legacy nav-icon"></i>
+                        <i class="fab fa-product-hunt nav-icon"></i>
                         <p>
                             Product
                             <i class="right fas fa-angle-left"></i>
@@ -40,10 +44,8 @@
                                 <p>Product List</p>
                             </a>
                         </li>
-                    </ul>
-                    <ul class="nav nav-treeview">
                         <li class="nav-item">
-                        <a href="{{route('product.create')}}" class="nav-link mb-2">
+                            <a href="{{route('product.create')}}" class="nav-link mb-2">
                                 <i class="fa-solid fa-dot-circle nav-icon"></i>
                                 <p>Product Create</p>
                             </a>
@@ -58,7 +60,7 @@
                 <!-- nav-item-7 start -->
                 <li class="nav-item">
                     <a href="#" class="nav-link mb-2">
-                    <i class="fab fa-edge-legacy nav-icon"></i>
+                    <i class="fa fa-bag-shopping nav-icon"></i>
 
                         <p>
                             Order
@@ -79,7 +81,6 @@
                                 <p>Processing</p>
                             </a>
                         </li>
-                    </ul><ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="" class="nav-link mb-2">
                                 <i class="fa-solid fa-dot-circle nav-icon"></i>
