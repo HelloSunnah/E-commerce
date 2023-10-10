@@ -69,20 +69,20 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="" class="nav-link mb-2">
+                            <a href="{{route('onhold.list')}}" class="nav-link mb-2">
                                 <i class="fa-solid fa-dot-circle nav-icon"></i>
                                 <p>OnHold</p>
                             </a>
                         </li>
                     </ul><ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="" class="nav-link mb-2">
+                        <a href="{{route('processing.list')}}" class="nav-link mb-2">
                                 <i class="fa-solid fa-dot-circle nav-icon"></i>
                                 <p>Processing</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link mb-2">
+                        <a href="{{route('complete.list')}}" class="nav-link mb-2">
                                 <i class="fa-solid fa-dot-circle nav-icon"></i>
                                 <p>Complete</p>
                             </a>
