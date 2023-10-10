@@ -123,10 +123,6 @@ class ProductController extends Controller
             ->withBasicAuth(env("API_USERNAME"), env("API_PASSWORD"))
             ->get("https://vertexbazaar.com/wp-json/wc/v2/products?search={$request->search}");
 
-        $results = collect($resp)->filter(function ($item) use ($search) {
-            return str_contains(strtolower($item['name']), strtolower($search));
-        });
-
         return $resp->object();
     }
     public function search()
