@@ -63,7 +63,8 @@ class ProductController extends Controller
                 'id_code' => $request->input('variation_id')[$key],
             ]);
         }
-        return redirect()->route('product.list')->with('success', 'Product created successfully');
+
+        return to_route('product.list')->with('success', 'Product created successfully');
     }
 
 
@@ -112,7 +113,7 @@ class ProductController extends Controller
             ]);
         }
 
-        return redirect()->route('product.list')->with('success', 'Product updated successfully');
+        return to_route('product.list')->with('success', 'Product updated successfully');
     }
     public function SearchProduct(Request $request)
     {
